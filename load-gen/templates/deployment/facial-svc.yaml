@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: facial-svc
+  labels:
+    app: facial-svc
+    appCode: load-generator
+spec:
+  replicas: {{ .Values.facial-svc.replicas }}
+  selector:
+    matchLabels:
+      app: facial-svc
+      appCode: load-generator
+  template:
+    metadata:
+      labels:
+        app: facial-svc
+        appCode: load-generator
+    spec:
+      containers:
+      - name: facial-svc
+        image: {{ .Values.global.image.repository }}:{{ .Values.facial-svc.image.tag }}
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: loadgen-config
+        - secretRef:
+            name: loadgen-secret
+        env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
+        volumeMounts:
+        - name: load-gen-data
+          mountPath: /data/load_gen
+      volumes:
+      - name: load-gen-data
+        persistentVolumeClaim:
+          claimName: load-gen-pvc

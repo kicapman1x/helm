@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opentelemetry-collector
+spec:
+  replicas: {{ .Values.otel.replicas }}
+  selector:
+    matchLabels:
+      app: opentelemetry-collector
+  template:
+    metadata:
+      labels:
+        app: opentelemetry-collector
+    spec:
+      containers:
+      - name: opentelemetry-collector
+        image: {{ .Values.otel.image.repository }}:{{ .Values.otel.image.tag }}
+        args:
+          - "--config=/apps/otel/config.yaml"
+        ports:
+        - name: otlp-grpc
+          containerPort: {{ .Values.otel.otlpReceiverPort }}
+        - name: metrics
+          containerPort: {{ .Values.otel.otlpExporterPort }}
+        volumeMounts:
+        - name: otelcol-config
+          mountPath: /apps/otel
+      volumes:
+      - name: otelcol-config
+        configMap:
+          name: otelcol-config

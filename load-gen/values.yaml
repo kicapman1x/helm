@@ -1,0 +1,48 @@
+global:
+  image:
+    repository: "kicapman1x/load-generator"
+otel:
+  image:
+    repository: "otel/opentelemetry-collector"
+    tag: "latest"
+  otlpReceiverEndpoint: "0.0.0.0:4317"
+  otlpExporterEndpoint: "0.0.0.0:8888"
+  replicas: 1
+  otlpReceiverPort: 4317
+  otlpExporterPort: 8888
+facial-svc:
+  image:
+    tag: "facial-service-rc1"
+  replicas: 1
+flight-svc:
+  image:
+    tag: "flight-service-rc1"
+  replicas: 1
+housekeep:
+  image:
+    tag: "housekeep-rc1"
+  replicas: 1
+passenger-svc:
+  image:
+    tag: "passenger-service-rc1"
+  replicas: 1
+satellite-interface:
+  image:
+    tag: "satellite-interface-rc1"
+  replicas: 1
+satellite1:
+  image:
+    tag: "satellite1-rc1"
+  replicas: 1
+satellite2:
+  image:
+    tag: "satellite2-rc1"
+  replicas: 1
+satellite3:
+  image:
+    tag: "satellite3-rc1"
+  replicas: 1
+source-data-interface:
+  image:
+    tag: "source-data-interface-rc1"
+  replicas: 1
