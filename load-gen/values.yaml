@@ -6,15 +6,15 @@ otel:
     repository: "otel/opentelemetry-collector"
     tag: "latest"
   otlpReceiverEndpoint: "0.0.0.0:4317"
-  otlpExporterEndpoint: "0.0.0.0:8888"
+  otlpExporterEndpoint: "0.0.0.0:9888"
   replicas: 1
   otlpReceiverPort: 4317
-  otlpExporterPort: 8888
-facial-svc:
+  otlpExporterPort: 9888
+facialSvc:
   image:
     tag: "facial-service-rc1"
   replicas: 1
-flight-svc:
+flightSvc:
   image:
     tag: "flight-service-rc1"
   replicas: 1
@@ -22,11 +22,11 @@ housekeep:
   image:
     tag: "housekeep-rc1"
   replicas: 1
-passenger-svc:
+passengerSvc:
   image:
     tag: "passenger-service-rc1"
   replicas: 1
-satellite-interface:
+satelliteInterface:
   image:
     tag: "satellite-interface-rc1"
   replicas: 1
@@ -42,7 +42,7 @@ satellite3:
   image:
     tag: "satellite3-rc1"
   replicas: 1
-source-data-interface:
+sourceDataInterface:
   image:
     tag: "source-data-interface-rc1"
   replicas: 1

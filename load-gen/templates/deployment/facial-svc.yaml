@@ -6,7 +6,7 @@ metadata:
     app: facial-svc
     appCode: load-generator
 spec:
-  replicas: {{ .Values.facial-svc.replicas }}
+  replicas: {{ .Values.facialSvc.replicas }}
   selector:
     matchLabels:
       app: facial-svc
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: facial-svc
-        image: {{ .Values.global.image.repository }}:{{ .Values.facial-svc.image.tag }}
+        image: {{ .Values.global.image.repository }}:{{ .Values.facialSvc.image.tag }}
         imagePullPolicy: Always
         envFrom:
         - configMapRef:

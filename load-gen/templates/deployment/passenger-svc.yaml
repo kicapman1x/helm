@@ -6,7 +6,7 @@ metadata:
     app: passenger-svc
     appCode: load-generator
 spec:
-  replicas: {{ .Values.passenger-svc.replicas }}
+  replicas: {{ .Values.passengerSvc.replicas }}
   selector:
     matchLabels:
       app: passenger-svc
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: passenger-svc
-        image: {{ .Values.global.image.repository }}:{{ .Values.passenger-svc.image.tag }}
+        image: {{ .Values.global.image.repository }}:{{ .Values.passengerSvc.image.tag }}
         imagePullPolicy: Always
         envFrom:
         - configMapRef:
