@@ -16,8 +16,8 @@ data:
     exporters:
       prometheus:
         endpoint: {{ .Values.otel.otlpExporterEndpoint | quote }}
-    logging:
-      loglevel: debug
+      debug:
+        verbosity: detailed
     service:
       telemetry:
         logs:
