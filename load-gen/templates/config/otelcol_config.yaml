@@ -16,9 +16,14 @@ data:
     exporters:
       prometheus:
         endpoint: {{ .Values.otel.otlpExporterEndpoint | quote }}
+    logging:
+      loglevel: debug
     service:
+      telemetry:
+        logs:
+          level: debug
       pipelines:
         metrics:
           receivers: [otlp]
           processors: [batch]
-          exporters: [prometheus]
+          exporters: [logging, prometheus]

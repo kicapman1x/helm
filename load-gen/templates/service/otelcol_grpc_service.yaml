@@ -7,5 +7,5 @@ spec:
     app: opentelemetry-collector
   ports:
   - name: otlp-grpc
-    port: {{ .Values.otel.otlpExporterPort }}
+    port: {{ .Values.otel.otlpReceiverPort }}
     targetPort: {{ .Values.otel.otlpReceiverPort }} 
