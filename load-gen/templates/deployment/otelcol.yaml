@@ -20,8 +20,8 @@ spec:
         ports:
         - name: otlp-grpc
           containerPort: {{ .Values.otel.otlpReceiverPort }}
-        - name: metrics
-          containerPort: {{ .Values.otel.otlpExporterPort }}
+        # - name: metrics
+        #   containerPort: {{ .Values.otel.otlpExporterPort }}
         volumeMounts:
         - name: otelcol-config
           mountPath: /apps/otel
