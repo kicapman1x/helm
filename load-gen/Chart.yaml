@@ -2,5 +2,5 @@ apiVersion: v2
 name: load-generator
 description: Helm chart for load-generator
 type: application
-version: 0.2.0
-appVersion: "rc2"
+version: 0.3.0
+appVersion: "rc3"

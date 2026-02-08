@@ -13,6 +13,8 @@ data:
   RMQ_HOST: rabbit-server.han.gg
   RMQ_PORT: "5671"
 
+  KAFKA_HOST: kafka-mq.han.gg:9092
+
   MYSQL_HOST: db1.han.gg
   MYSQL_PORT: "3306"
   MYSQL_DB: hq

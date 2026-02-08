@@ -12,37 +12,37 @@ otel:
   # otlpExporterPort: 4317
 facialSvc:
   image:
-    tag: "facial-service-rc2"
+    tag: "facial-service-rc3"
   replicas: 1
 flightSvc:
   image:
-    tag: "flight-service-rc2"
+    tag: "flight-service-rc3"
   replicas: 1
 housekeep:
   image:
-    tag: "housekeep-rc2"
+    tag: "housekeep-rc3"
   replicas: 1
 passengerSvc:
   image:
-    tag: "passenger-service-rc2"
+    tag: "passenger-service-rc3"
   replicas: 1
 satelliteInterface:
   image:
-    tag: "satellite-interface-rc2"
+    tag: "satellite-interface-rc3"
   replicas: 1
 satellite1:
   image:
-    tag: "satellite1-rc2"
+    tag: "satellite1-rc3"
   replicas: 1
 satellite2:
   image:
-    tag: "satellite2-rc2"
+    tag: "satellite2-rc3"
   replicas: 1
 satellite3:
   image:
-    tag: "satellite3-rc2"
+    tag: "satellite3-rc3"
   replicas: 1
 sourceDataInterface:
   image:
-    tag: "source-data-interface-rc2"
+    tag: "source-data-interface-rc3"
   replicas: 1
