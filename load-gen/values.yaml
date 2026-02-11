@@ -9,7 +9,7 @@ otel:
   otlpExporterEndpoint: "telegraf.han.gg:4317"
   replicas: 1
   otlpReceiverPort: 4317
-  # otlpExporterPort: 4317
+  ## otlpExporterPort: 4317
 facialSvc:
   image:
     tag: "facial-service-rc3"
