@@ -1,7 +1,0 @@
-dcs-secret:
-  RMQ_USER: "daddy"
-  RMQ_PW: "password"
-  MYSQL_USER: "daddy"
-  MYSQL_PW: "p455w0rD"
-  IBM_MQ_USER: "app"
-  IBM_MQ_PW: "password"
