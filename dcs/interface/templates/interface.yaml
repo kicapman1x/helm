@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: interface
+  labels:
+    app: interface
+    appCode: dcs
+spec:
+  replicas: {{ .Values.global.replicas.interface }}
+  selector:
+    matchLabels:
+      app: interface
+      appCode: dcs
+  template:
+    metadata:
+      labels:
+        app: interface
+        appCode: dcs
+    spec:
+      containers:
+      - name: interface
+        image: {{ .Values.global.image.repository }}/{{ .Values.image.tag1 }}:{{ .Values.image.tag2 }}
+        imagePullPolicy: {{ .Values.global.image.pullPolicy }}
+        envFrom:
+        - configMapRef:
+            name: {{ .Values.global.env.configmap }}
+        - secretRef:
+            name: {{ .Values.global.env.secret }}
+        env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
+        volumeMounts:
+        - name: {{ .Values.global.volumes.name }}
+          mountPath: {{ .Values.global.volumes.mountPath }}
+      volumes:
+      - name: {{ .Values.global.volumes.name }}
+        persistentVolumeClaim:
+          claimName: {{ .Values.global.volumes.pvc }}

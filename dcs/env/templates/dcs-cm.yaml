@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dcs-config
+data:
+  PAYLOAD_DIR: {{ .Values.dcs-config.PAYLOAD_DIR }}
+  KAFKA_HOST: {{ .Values.dcs-config.KAFKA_HOST }}
+  CA_PATH: {{ .Values.dcs-config.CA_PATH }}
+  CERT_PATH: {{ .Values.dcs-config.CERT_PATH }}
+  KEY_PATH: {{ .Values.dcs-config.KEY_PATH }}
+  KAFKA_FLIGHT_TOPIC: {{ .Values.dcs-config.KAFKA_FLIGHT_TOPIC }}
+  KAFKA_PASSENGER_TOPIC: {{ .Values.dcs-config.KAFKA_PASSENGER_TOPIC }}
+  KAFKA_RTS_PF_CG_ID: {{ .Values.dcs-config.KAFKA_RTS_PF_CG_ID }}
+  log_directory: {{ .Values.dcs-config.log_directory }}
+  log_level: {{ .Values.dcs-config.log_level }}
+  sampled_flights_no: {{ .Values.dcs-config.sampled_flights_no }}
+  sampled_passengers_no: {{ .Values.dcs-config.sampled_passengers_no }}
+  PASSENGER_DL_INTERVAL: {{ .Values.dcs-config.PASSENGER_DL_INTERVAL }}
+  RMQ_HOST: {{ .Values.dcs-config.RMQ_HOST }}
+  RMQ_PORT: {{ .Values.dcs-config.RMQ_PORT }}
+  RMQ_FLIGHT_QUEUE: {{ .Values.dcs-config.RMQ_FLIGHT_QUEUE }}
+  RMQ_PASSENGER_QUEUE: {{ .Values.dcs-config.RMQ_PASSENGER_QUEUE }}
+  RMQ_POLL_INT: {{ .Values.dcs-config.RMQ_POLL_INT }}
+  MYSQL_HOST: {{ .Values.dcs-config.MYSQL_HOST }}
+  MYSQL_PORT: {{ .Values.dcs-config.MYSQL_PORT }}
+  MYSQL_DB: {{ .Values.dcs-config.MYSQL_DB }}
+  RMQ_SCHED_PF_QUEUE: {{ .Values.dcs-config.RMQ_SCHED_PF_QUEUE }}
+  IBM_MQ_HOST: {{ .Values.dcs-config.IBM_MQ_HOST }}
+  IBM_MQ_PORT: {{ .Values.dcs-config.IBM_MQ_PORT }}
+  IBM_MQ_QUEUE_MANAGER: {{ .Values.dcs-config.IBM_MQ_QUEUE_MANAGER }}
+  IBM_MQ_CHANNEL: {{ .Values.dcs-config.IBM_MQ_CHANNEL }}
+  IBM_MQ_KEY_REPO: {{ .Values.dcs-config.IBM_MQ_KEY_REPO }}
+  RMQ_SCHED_PF_QUEUE: {{ .Values.dcs-config.RMQ_SCHED_PF_QUEUE }}
+  IBM_MQ_QUEUE_NAME: {{ .Values.dcs-config.IBM_MQ_QUEUE_NAME }}
+  PF_BE_HOST: {{ .Values.dcs-config.PF_BE_HOST }}
+  SCHEDULER_INTERVAL: {{ .Values.dcs-config.SCHEDULER_INTERVAL }}
+  KAFKA_DATA_LAKE_TOPIC: {{ .Values.dcs-config.KAFKA_DATA_LAKE_TOPIC }}
