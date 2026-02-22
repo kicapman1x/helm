@@ -3,7 +3,7 @@ global:
     repository: "kicapman1x/data-combo-service"
     pullPolicy: Always
   replicas:
-    dcs-stub: 1
+    dcs_stub: 1
     interface: 1
     rts: 1
     service: 1
@@ -14,4 +14,4 @@ global:
   volumes:
     name: "dcs-volume"
     pvc: "dcs-pvc"
-    mountPath: "/data/dcs"
+    mountPath: "/apps/dcs/data"
